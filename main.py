@@ -41,11 +41,49 @@ def ask_user_input():
         # Check if the user has entered a value
         if input_border_pixels == "":
             border_pixels = 8
+            break
         else:
             try:
                 border_pixels = int(input_border_pixels)
+                break
             except ValueError:
-                print_error(f"Please enter a valid number for the border pixels.")
-                border_pixels = 8
+                print_error("Please enter a valid number.")
+    
+    # return the border pixels
+    return border_pixels
+
+def main():
+    # Clear the console
+    os.system('cls' if os.name == 'nt' else 'clear')
+    initalise_folders()
+
+    print(f"{CFC_text_blue}{CFC_text_bold}Python Scanned Image Cropper{CFC_reset}")
+    print(f"{CFC_text_dim}This program is designed to crop scanned images saved as jpg/jpeg of photos, crop them and save them in a new folder.{CFC_reset}")
+    print(f"{CFC_text_dim}==================================================================================================={CFC_reset}")
+    print("")
+
+    print(f"{CFC_text_yellow}{CFC_text_bold}Instructions{CFC_reset}")
+    print(f"1. Place all the scanned images in the 'input_images' folder.")
+    print(f"2. Input the number of border pixels to crop around the conten, if needed.")
+    print(f"3. The cropped images will be saved in the 'output_images_cropped' folder as their original names.")
+    print("")
+
+    input("Press Enter to continue to instructions 1...")
+    print("")
+
+    print(f"{CFC_text_yellow}{CFC_text_bold}Instructions 1{CFC_reset}")
+    print(f"Place all the scanned images in the 'input_images' folder.")
+
+    input("Press Enter to continue to instructions 2...")
+    print("")
+
+    print(f"{CFC_text_yellow}{CFC_text_bold}Instructions 2{CFC_reset}")
+    border_pixels = ask_user_input()
+
+    input("Press Enter to continue to instructions 3...")
+    print("")
+
+    print(f"{CFC_text_yellow}{CFC_text_bold}Instructions 3{CFC_reset}")
+    input("Press Enter to start processing the images...")
 
 main()
