@@ -135,7 +135,7 @@ def main():
 
     # No images found in the input folder
     if not image_files:
-        print(f"{CFC_text_red}Error: No images found in the input folder.{CFC_reset}")
+        print(f"{CFC_text_red}Error: No jpg/jpeg images found in the input folder.{CFC_reset}")
         return
     
     # List holding failed images
